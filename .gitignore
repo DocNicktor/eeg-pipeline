@@ -1,0 +1,14 @@
+#不能传去github的东西
+
+# Python 编译缓存 __pycache__ 文件夹
+__pycache__/
+*.py[cod]
+
+Jupyter Notebook 的临时备份
+.ipynb_checkpoints/
+
+#医疗数据与模型文件
+*.bdf
+*.csv
+*.npy
+*.pkl

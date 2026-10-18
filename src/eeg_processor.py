@@ -10,7 +10,9 @@ class EEGProcessor:
     Provides an object-oriented interface to seamlessly load, visualize, preprocess 
     raw EEG signals, and evaluate machine learning models.
     """
-    
+
+
+    # __init__ is a Dunder Methods , which is Double Underscore
     def __init__(self, subject=1, runs=4):
         """
         Initializes the processor and binds it to specific subject data.
@@ -18,6 +20,16 @@ class EEGProcessor:
         Args:
             subject (int): The subject identifier (e.g., 1).
             runs (int): The experimental run number (e.g., 4).
+
+        _____________________________________________________________________________________________________________________________________
+
+        Methods:
+            load_data(): Downloads and loads the corresponding EDF format medical data into memory.
+            filter_data(low_freq=1.0, high_freq=40.0): Applies a band-pass filter to the raw EEG data to remove noise.
+            extract_features(window_size=1.0): Slices the continuous waveform into epochs and calculates variance as features.
+            train_and_evaluate(model=None): Evaluates a given Scikit-Learn model using 5-fold cross-validation.
+
+            
         """
         self.subject = subject
         self.runs = runs
